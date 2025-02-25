@@ -1,0 +1,16 @@
+{
+	"id": "antsy_multiplayer",
+	"name": "Antsy Multiplayer",
+	"display_name": "Antsy",
+	"author": ["Taylor Kerrihard"],
+	"description": "Adds multiplayer!",
+	"prefix": "antsy_multiplayer",
+	"main_file": "antsy_multiplayer.lua",
+	"priority": 0,
+	"badge_colour": "edabe4",
+	"badge_text_colour": "7c607d",
+	"version": "1.0.0",
+	"dependencies": [
+        "Steamodded (>=1.*)"
+    ]
+}
