@@ -5,6 +5,7 @@ SMODS.Blind {
     boss = {min = 1, max = 100}
 }
 
+-- Remove reroll tag
 SMODS.Tag:take_ownership('boss',
     {
         in_pool = function()
@@ -67,6 +68,20 @@ G.MULTIPLAYER.HOOKS.game_update = function (r)
                     G.MULTIPLAYER.PLAYER.won = 0
                 end
             end
+            if command[1] == "[Won_Game]" then
+                G.MULTIPLAYER.OPPONENT.won = 0
+                G.MULTIPLAYER.PLAYER.won = 0
+                G.FUNCS.overlay_menu {
+                    definition = win_game_screen()
+                } 
+            end
+            if command[1] == "[Lost_Game]" then
+                G.MULTIPLAYER.OPPONENT.won = 0
+                G.MULTIPLAYER.PLAYER.won = 0
+                G.FUNCS.overlay_menu {
+                    definition = lose_game_screen()
+                } 
+            end
         end
     end
     return r
@@ -115,6 +130,9 @@ G.MULTIPLAYER.HOOKS.reset_blinds = function (r)
 end
 
 G.MULTIPLAYER.HOOKS.end_round = function (r)
+    if G.GAME.chips < get_current_blind_chips() then
+        send_to_tcp("[Lost_Round]")
+    end
     if G.GAME.round_resets.blind.name ~= "Small Blind" and G.GAME.round_resets.blind.name ~= "Big Blind" then 
         send_to_tcp("[Beat_Boss]")
     end
