@@ -2,7 +2,8 @@ SMODS.Blind {
     key = "comp_blind",
     loc_txt = {name = "Competitive Blind", text = {"Fight!"}},
     mult = 1,
-    boss = {min = 1, max = 100}
+    boss = {min = 1, max = 100},
+    boss_colour = HEX('ffadfc')
 }
 
 -- Remove reroll tag
