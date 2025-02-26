@@ -11,7 +11,14 @@ G.MULTIPLAYER.HOOKS.create_UIBox_HUD = function (r)
     {n=G.UIT.R, config={align = "cm", padding = 0.1}, nodes={
         {n=G.UIT.T, id="antsy_opponent_score", config={ref_table = G.MULTIPLAYER.PLAYER, ref_value = "score_statement", colour = G.C.UI.TEXT_LIGHT, scale=0.5}}
     }}
-    table.insert(r.nodes[1].nodes[1].nodes[4].nodes[1].nodes,1, t)
+    local y = 
+    {n=G.UIT.R, config={align = "cm", padding = 0.1}, nodes={
+        {n=G.UIT.T, id="antsy_opponent_score", config={ref_table = G.MULTIPLAYER.PLAYER, ref_value = "won", colour = G.C.BLUE, scale=0.2}},
+        {n=G.UIT.T, id="antsy_opponent_score", config={text = " | ", colour = G.C.UI.TEXT_LIGHT, scale=0.2}},
+        {n=G.UIT.T, id="antsy_opponent_score", config={ref_table = G.MULTIPLAYER.OPPONENT, ref_value = "won", colour = G.C.RED, scale=0.2}}
+    }}
+    table.insert(r.nodes[1].nodes[1].nodes[4].nodes[1].nodes,2, t) 
+    table.insert(r.nodes[1].nodes[1].nodes[4].nodes[1].nodes,2, y) 
     return r
 end
 

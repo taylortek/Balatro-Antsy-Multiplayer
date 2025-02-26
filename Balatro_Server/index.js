@@ -106,6 +106,10 @@ require('net').createServer(function (socket) {
                     }
                 }
                 break
+            case "[Lost_Round]":
+                socket.write("[Lost_Game]\n")
+                sockets[opponent_number-1].write("[Won_Game]\n")
+                break
         }
     });
 })

@@ -12,7 +12,7 @@ G.MULTIPLAYER.OPPONENT = {
 G.MULTIPLAYER.PLAYER = {
     score = "0",
     won = 0,
-    score_statement = "0 | 0"
+    score_statement = "0 | 0",
 }
 G.MULTIPLAYER.registered = false
 

@@ -1,6 +1,6 @@
 SMODS.Blind {
     key = "comp_blind",
-    loc_txt = {name = "Competative Blind", text = {"Fight!"}},
+    loc_txt = {name = "Competitive Blind", text = {"Fight!"}},
     mult = 1,
     boss = {min = 1, max = 100}
 }
