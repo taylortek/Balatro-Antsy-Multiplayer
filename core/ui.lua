@@ -116,6 +116,19 @@ function lose_game_screen()
     return t
 end
 
+function failed_connection_popup()
+    local t =
+    {n = G.UIT.ROOT, config = {r=0.1, minw=5, align="cm", padding=0.1, colour=G.C.BLACK}, nodes = {
+        {n = G.UIT.R, config = {align="cm", padding=0.1}, nodes = {
+            {n = G.UIT.T, config = {text="Failed to connect...", colour=G.C.UI.TEXT_LIGHT, scale=1}}
+        }},
+        {n = G.UIT.R, config = {align="cm", padding=0.1}, nodes = {
+            UIBox_button{id = 'won_round_button', button = "exit_overlay_menu", colour = G.C.RED, minw = 3.65, minh = 1.55, label = {"Ok"}, scale = 1, col = true}
+        }}
+    }}
+    return t
+end
+
 function disconnected_from_server_popup()
     local t = 
     {n = G.UIT.ROOT, config = {r=0.1, minw=5, align="cm", padding=0.1, colour=G.C.BLACK}, nodes = {
@@ -150,7 +163,6 @@ SMODS.current_mod.config_tab = function()
                     G.MULTIPLAYER.IP, G.MULTIPLAYER.PORT = G.MULTIPLAYER.CONFIG.ip:gsub("O", "0"), tonumber(G.MULTIPLAYER.CONFIG.port)
                 end
             }),
-        }},
+        }}, 
 	}}
 end
-
