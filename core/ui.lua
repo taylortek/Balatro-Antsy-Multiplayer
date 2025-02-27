@@ -150,6 +150,6 @@ SMODS.current_mod.config_tab = function()
                     G.MULTIPLAYER.IP, G.MULTIPLAYER.PORT = G.MULTIPLAYER.CONFIG.ip:gsub("O", "0"), tonumber(G.MULTIPLAYER.CONFIG.port)
                 end
             }),
-        }}
+        }},
 	}}
 end
