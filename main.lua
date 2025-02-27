@@ -6,7 +6,7 @@ SMODS.Blind {
     boss_colour = HEX('ffadfc')
 }
 
--- Remove reroll tag
+-- Remove boss tag from game
 SMODS.Tag:take_ownership('boss',
     {
         in_pool = function()
@@ -82,6 +82,13 @@ G.MULTIPLAYER.HOOKS.game_update = function (r)
                 G.FUNCS.overlay_menu {
                     definition = lose_game_screen()
                 } 
+            end
+            if command[1] == "[Add_Joker]" then
+                SMODS.add_card({
+                    set = "Joker",
+                    key = command[2],
+                    stickers = {command[3]}
+                })
             end
         end
     end

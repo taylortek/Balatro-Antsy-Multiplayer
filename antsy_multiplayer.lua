@@ -26,3 +26,6 @@ SMODS.load_file("core/ui.lua")()
 SMODS.load_file("core/button_callbacks.lua")()
 SMODS.load_file("main.lua")()
 
+SMODS.load_file("items/jokers.lua")()
+SMODS.load_file("items/spectrals.lua")()
+SMODS.load_file("items/backs.lua")()

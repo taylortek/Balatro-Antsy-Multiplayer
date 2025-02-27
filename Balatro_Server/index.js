@@ -110,6 +110,13 @@ require('net').createServer(function (socket) {
                 socket.write("[Lost_Game]\n")
                 sockets[opponent_number-1].write("[Won_Game]\n")
                 break
+            case "[Spectral_Action]":
+                switch (command[1]){
+                    case "[Spam_Mail]":
+                        sockets[opponent_number-1].write("[Add_Joker] " + command[2] + " eternal\n")
+                        break
+                }
+                break
         }
     });
 })
