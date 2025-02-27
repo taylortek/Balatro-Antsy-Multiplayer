@@ -153,3 +153,4 @@ SMODS.current_mod.config_tab = function()
         }},
 	}}
 end
+
