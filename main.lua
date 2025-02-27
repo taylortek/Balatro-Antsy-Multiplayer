@@ -25,7 +25,10 @@ G.MULTIPLAYER.HOOKS.game_update = function (r)
             if command[1] == "[Wait]" then
                 queueaction(function()
                     G.FUNCS.overlay_menu {
-                        definition = wait_menu()
+                        definition = wait_menu(),
+                        config = {
+                            no_esc = true
+                        }
                     }
                     return true
                 end, 0, 'after')

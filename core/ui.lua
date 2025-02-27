@@ -29,6 +29,9 @@ function lobby_menu(playernumber)
         {n = G.UIT.T, config = {text = "Lobby", colour = G.C.UI.TEXT_LIGHT, scale = 1}}
      }},
     {n = G.UIT.R, config = {align = "cm", padding = 0.1}, nodes = {
+        {n = G.UIT.T, config = {text = string.format("Connected to %s:%i", G.MULTIPLAYER.IP, G.MULTIPLAYER.PORT), colour = G.C.UI.TEXT_LIGHT, scale = 0.2}}
+     }},
+    {n = G.UIT.R, config = {align = "cm", padding = 0.1}, nodes = {
         {n = G.UIT.T, config = {text = string.format("You are player %s", playernumber), colour = G.C.UI.TEXT_LIGHT, scale = 0.5}}
      }},
     {n = G.UIT.R, config = {align = "cm", padding = 0.1}, nodes = {

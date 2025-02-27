@@ -1,4 +1,6 @@
 G.FUNCS.lobby_button = function (e)
+    G.MULTIPLAYER.tcp:close()
+    G.MULTIPLAYER.tcp:settimeout(500)
     local connected = G.MULTIPLAYER.tcp:connect(G.MULTIPLAYER.IP, G.MULTIPLAYER.PORT)
     if not connected then
         G.FUNCS.overlay_menu{
@@ -9,7 +11,7 @@ G.FUNCS.lobby_button = function (e)
         G.MULTIPLAYER.player_number = talk_to_tcp("Get Player Number", true)
         G.MULTIPLAYER.registered = true
         G.FUNCS.overlay_menu {
-            definition = lobby_menu(G.MULTIPLAYER.player_number)
+            definition = lobby_menu(G.MULTIPLAYER.player_number),
         }
     end
 end

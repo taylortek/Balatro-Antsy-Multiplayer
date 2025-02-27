@@ -17,6 +17,8 @@ total_hands = 0
 
 sockets = []
 
+console.log("Starting Balatro Server...")
+
 require('net').createServer(function (socket) {
     players.push(new Player(players.length+1))
     console.log("Player " + players.length + " joined");
