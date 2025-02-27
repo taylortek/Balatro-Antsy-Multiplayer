@@ -16,6 +16,10 @@ SMODS.Back{
                     key = "c_antsy_multiplayer_spam_mail"
                 })
                 SMODS.add_card({
+                    set = "Spectral",
+                    key = "c_antsy_multiplayer_jumpscare"
+                })
+                SMODS.add_card({
                     set = "Joker",
                     key = "j_joker"
                 })

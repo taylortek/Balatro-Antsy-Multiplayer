@@ -15,7 +15,7 @@ seed = ""
 total_chips = 0
 total_hands = 0
 
-sockets = [{}, {}]
+sockets = []
 
 require('net').createServer(function (socket) {
     players.push(new Player(players.length+1))
@@ -115,10 +115,22 @@ require('net').createServer(function (socket) {
                     case "[Spam_Mail]":
                         sockets[opponent_number-1].write("[Add_Joker] " + command[2] + " eternal\n")
                         break
+                    case "[Jumpscare]":
+                        sockets[opponent_number-1].write("[Up_Ante]\n")
+                        break
                 }
                 break
         }
     });
+
+    socket.on('end', () => {
+        console.log("Player " + player_number + " disconnected")
+        if (sockets.length > 1) {
+            sockets[opponent_number-1].write("[Other_Player_Disconnect]\n")
+        }
+        players = []
+        sockets = []
+    })
 })
 
 .listen(12345);

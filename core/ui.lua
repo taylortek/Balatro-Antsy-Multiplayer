@@ -116,6 +116,19 @@ function lose_game_screen()
     return t
 end
 
+function disconnected_from_server_popup()
+    local t = 
+    {n = G.UIT.ROOT, config = {r=0.1, minw=5, align="cm", padding=0.1, colour=G.C.BLACK}, nodes = {
+        {n = G.UIT.R, config = {align="cm", padding=0.1}, nodes = {
+            {n = G.UIT.T, config = {text="Disconnected from server", colour=G.C.UI.TEXT_LIGHT, scale=1}}
+        }},
+        {n = G.UIT.R, config = {align="cm", padding=0.1}, nodes = {
+            UIBox_button{id = 'antsy_quit_button', button = "quit", colour = G.C.RED, minw = 3.65, minh = 1.55, label = {"Quit", scale = 1, col = true}}
+        }}
+    }}
+    return t
+end
+
 -- Make config to allow for ip and port selection
 SMODS.current_mod.config_tab = function()
 	return {n = G.UIT.ROOT, config = {r = 0.1, minw = 5, align = "cm", padding = 0.2, colour = G.C.BLACK

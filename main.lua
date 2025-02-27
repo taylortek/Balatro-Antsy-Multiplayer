@@ -90,6 +90,14 @@ G.MULTIPLAYER.HOOKS.game_update = function (r)
                     stickers = {command[3]}
                 })
             end
+            if command[1] == "[Up_Ante]" then
+                ease_ante(1)
+            end
+            if command[1] == "[Other_Player_Disconnect]" then
+                G.FUNCS.overlay_menu {
+                    definition = disconnected_from_server_popup()
+                }
+            end
         end
     end
     return r
