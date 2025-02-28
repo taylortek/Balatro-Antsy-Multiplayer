@@ -17,9 +17,17 @@ total_hands = 0
 
 sockets = []
 
+ip_whitelist = [
+    "::ffff:127.0.0.1"
+]
+
 console.log("Starting Balatro Server...")
 
 require('net').createServer(function (socket) {
+    if (!ip_whitelist.includes(socket.remoteAddress)) {
+        console.log("Tried to get a connection from: " + socket.remoteAddress)
+        socket.destroy()
+    } else {
     players.push(new Player(players.length+1))
     console.log("Player " + players.length + " joined");
     
@@ -133,6 +141,7 @@ require('net').createServer(function (socket) {
         players = []
         sockets = []
     })
+    }
 })
 
 .listen(12345);

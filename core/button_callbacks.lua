@@ -1,7 +1,7 @@
 G.FUNCS.lobby_button = function (e)
     G.MULTIPLAYER.tcp:close()
-    G.MULTIPLAYER.tcp:settimeout(500)
-    local connected = G.MULTIPLAYER.tcp:connect(G.MULTIPLAYER.IP, G.MULTIPLAYER.PORT)
+    G.MULTIPLAYER.tcp:settimeout(5)
+    local connected = G.MULTIPLAYER.tcp:connect(G.MULTIPLAYER.IP, tonumber(G.MULTIPLAYER.PORT))
     if not connected then
         G.FUNCS.overlay_menu{
             definition = failed_connection_popup()

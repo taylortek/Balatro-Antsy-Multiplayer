@@ -155,15 +155,15 @@ SMODS.current_mod.config_tab = function()
                 extended_corpus = true, ref_table = G.MULTIPLAYER.CONFIG, ref_value = 'ip', keyboard_offset = 1,
                 callback = function(e)
                     SMODS.save_mod_config(G.MULTIPLAYER.CONFIG)
-                    G.MULTIPLAYER.IP, G.MULTIPLAYER.PORT = G.MULTIPLAYER.CONFIG.ip:gsub("O", "0"), tonumber(G.MULTIPLAYER.CONFIG.port)
+                    G.MULTIPLAYER.IP, G.MULTIPLAYER.PORT = G.MULTIPLAYER.CONFIG.ip:gsub("O", "0"), G.MULTIPLAYER.CONFIG.port:gsub("O", "0")
                 end
             }),
              create_text_input({
                 w = 4, max_length = 100, prompt_text = "port",
                 extended_corpus = true, ref_table = G.MULTIPLAYER.CONFIG, ref_value = 'port', keyboard_offset = 1,
                 callback = function(e)
-                    SMODS.save_mod_config(G.MULTIPLAYER.CONFIG)
-                    G.MULTIPLAYER.IP, G.MULTIPLAYER.PORT = G.MULTIPLAYER.CONFIG.ip:gsub("O", "0"), tonumber(G.MULTIPLAYER.CONFIG.port)
+                    SMODS.save_mod_config(G.MULTIPLAYER.CONFIG) 
+                    G.MULTIPLAYER.IP, G.MULTIPLAYER.PORT = G.MULTIPLAYER.CONFIG.ip:gsub("O", "0"), G.MULTIPLAYER.CONFIG.port:gsub("O", "0")
                 end
             }),
         }}, 
