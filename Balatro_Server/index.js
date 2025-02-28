@@ -32,7 +32,7 @@ if (argv.length > 2) {
 
 console.log("Starting Balatro Server...")
 
-net.createServer(function (socket) {
+const server = net.createServer(function (socket) {
     if (blockList.check(socket.remoteAddress, 'ipv6')) {
         console.log("Tried to get a connection from: " + socket.remoteAddress)
         socket.destroy()
@@ -154,4 +154,5 @@ net.createServer(function (socket) {
     }
 })
 
-.listen(12345);
+server.maxConnections = 2
+server.listen(12345);
