@@ -1,6 +1,7 @@
 // This code is trying it's best...
 
 const { argv } = require('node:process');
+const net = require('net');
 
 class Player {
     id = 0
@@ -19,9 +20,8 @@ total_hands = 0
 
 sockets = []
 
-ip_whitelist = [
-    "::ffff:127.0.0.1"
-]
+const blockList = new net.BlockList();
+//blockList.addAddress("::ffff:127.0.0.1", 'ipv6')
 
 rounds_to_win = 3
 
@@ -32,8 +32,8 @@ if (argv.length > 2) {
 
 console.log("Starting Balatro Server...")
 
-require('net').createServer(function (socket) {
-    if (!ip_whitelist.includes(socket.remoteAddress)) {
+net.createServer(function (socket) {
+    if (blockList.check(socket.remoteAddress, 'ipv6')) {
         console.log("Tried to get a connection from: " + socket.remoteAddress)
         socket.destroy()
     } else {
