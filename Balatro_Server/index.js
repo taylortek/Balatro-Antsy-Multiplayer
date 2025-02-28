@@ -1,5 +1,7 @@
 // This code is trying it's best...
 
+const { argv } = require('node:process');
+
 class Player {
     id = 0
     round = -1
@@ -20,6 +22,13 @@ sockets = []
 ip_whitelist = [
     "::ffff:127.0.0.1"
 ]
+
+rounds_to_win = 3
+
+if (argv.length > 2) {
+    rounds_to_win = Number(argv[2])
+    console.log("Setting rounds to win to " + rounds_to_win)
+}
 
 console.log("Starting Balatro Server...")
 
@@ -48,6 +57,7 @@ require('net').createServer(function (socket) {
             case "Get Player Number":
                 console.log("[Server] Fetching player number")
                 socket.write(String(player_number)+"\n")
+                socket.write("[Set] Rounds_To_Win " + rounds_to_win + "\n")
                 break
             case "Get Seed":
                 if (seed != "") {

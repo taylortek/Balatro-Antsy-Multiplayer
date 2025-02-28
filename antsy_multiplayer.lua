@@ -1,4 +1,5 @@
 G.MULTIPLAYER = {}
+G.MULTIPLAYER.rounds_to_win = 3
 
 G.MULTIPLAYER.CONFIG = SMODS.current_mod.config
 

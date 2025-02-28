@@ -58,16 +58,16 @@ G.MULTIPLAYER.HOOKS.game_update = function (r)
                 }
             end
             if command[1] == "[Won_Round]" or command[1] == "[Lost_Round]" then
-                if G.MULTIPLAYER.PLAYER.won >= 3 then
+                if G.MULTIPLAYER.PLAYER.won >= G.MULTIPLAYER.rounds_to_win then
                     G.FUNCS.overlay_menu {
                         definition = win_game_screen()
                     }
-                elseif G.MULTIPLAYER.OPPONENT.won >= 3 then
+                elseif G.MULTIPLAYER.OPPONENT.won >= G.MULTIPLAYER.rounds_to_win then
                     G.FUNCS.overlay_menu {
                         definition = lose_game_screen()
                     }
                 end
-                if G.MULTIPLAYER.PLAYER.won >= 3 or G.MULTIPLAYER.OPPONENT.won >= 3 then
+                if G.MULTIPLAYER.PLAYER.won >= G.MULTIPLAYER.rounds_to_win or G.MULTIPLAYER.OPPONENT.won >= G.MULTIPLAYER.rounds_to_win then
                     G.MULTIPLAYER.OPPONENT.won = 0
                     G.MULTIPLAYER.PLAYER.won = 0
                 end
@@ -102,6 +102,12 @@ G.MULTIPLAYER.HOOKS.game_update = function (r)
                         stickers = {command[3]},
                         no_edition = true
                     })
+                end
+            end
+            if command[1] == "[Set]" then
+                if command[2] == "Rounds_To_Win" then
+                    G.MULTIPLAYER.rounds_to_win = tonumber(command[3])
+                    print("set rounds to win to " .. G.MULTIPLAYER.rounds_to_win)
                 end
             end
             if command[1] == "[Up_Ante]" then
