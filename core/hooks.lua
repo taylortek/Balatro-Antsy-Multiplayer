@@ -69,3 +69,10 @@ end_round = function()
     local ret = old_func()
     return G.MULTIPLAYER.HOOKS.end_round(ret)
 end
+
+G.MULTIPLAYER.HOOKS.setup_run = function (r) return r end
+local old_func = G.FUNCS.setup_run
+G.FUNCS.setup_run = function(e)
+    local ret = old_func(e)
+    return G.MULTIPLAYER.HOOKS.setup_run(ret)
+end
