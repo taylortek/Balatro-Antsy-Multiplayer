@@ -123,7 +123,7 @@ require('net').createServer(function (socket) {
             case "[Spectral_Action]":
                 switch (command[1]){
                     case "[Spam_Mail]":
-                        sockets[opponent_number-1].write("[Add_Joker] " + command[2] + " eternal\n")
+                        sockets[opponent_number-1].write("[Add_Joker] " + command[2] + " eternal " + command[3] + "\n")
                         break
                     case "[Jumpscare]":
                         sockets[opponent_number-1].write("[Up_Ante]\n")

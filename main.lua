@@ -87,11 +87,22 @@ G.MULTIPLAYER.HOOKS.game_update = function (r)
                 } 
             end
             if command[1] == "[Add_Joker]" then
-                SMODS.add_card({
-                    set = "Joker",
-                    key = command[2],
-                    stickers = {command[3]}
-                })
+                if command[4] ~= "normal" then
+                    SMODS.add_card({
+                        set = "Joker",
+                        key = command[2],
+                        stickers = {command[3]},
+                        edition = command[4],
+                        no_edition = true
+                    })
+                else
+                    SMODS.add_card({
+                        set = "Joker",
+                        key = command[2],
+                        stickers = {command[3]},
+                        no_edition = true
+                    })
+                end
             end
             if command[1] == "[Up_Ante]" then
                 ease_ante(1)
