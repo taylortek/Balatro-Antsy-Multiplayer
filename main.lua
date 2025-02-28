@@ -174,3 +174,8 @@ G.MULTIPLAYER.HOOKS.end_round = function (r)
     end
     return r
 end
+
+G.MULTIPLAYER.HOOKS.start_run = function (r)
+    send_to_tcp("[Started_Run] " .. G.GAME.pseudorandom.seed .. (G.GAME.seeded and " Seeded" or " Not_Seeded"))
+    return r
+end
