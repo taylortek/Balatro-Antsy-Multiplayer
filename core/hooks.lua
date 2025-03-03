@@ -76,3 +76,10 @@ G.FUNCS.setup_run = function(e)
     local ret = old_func(e)
     return G.MULTIPLAYER.HOOKS.setup_run(ret)
 end
+
+G.MULTIPLAYER.HOOKS.game_draw = function (r) return r end
+local old_func = G.draw
+G.draw = function(self)
+    local ret = old_func(self)
+    return G.MULTIPLAYER.HOOKS.game_draw(ret)
+end

@@ -1,4 +1,5 @@
 G.MULTIPLAYER = {}
+G.MULTIPLAYER.MOD = SMODS.find_mod('antsy_multiplayer')[1]
 G.MULTIPLAYER.rounds_to_win = 3
 
 G.MULTIPLAYER.CONFIG = SMODS.current_mod.config
@@ -20,6 +21,14 @@ G.MULTIPLAYER.registered = false
 local mod_path = "" .. SMODS.current_mod.path
 local socket = require "socket"
 G.MULTIPLAYER.tcp = assert(socket.tcp())
+
+-- New Antsy Logo
+SMODS.Atlas {
+    key = "logo",
+    path = "balatro.png",
+    px = 333,
+    py = 216
+}
 
 SMODS.load_file("core/hooks.lua")()
 SMODS.load_file("core/api.lua")()

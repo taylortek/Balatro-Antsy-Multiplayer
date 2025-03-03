@@ -1,0 +1,22 @@
+[manifest]
+version = "1.0.0"
+priority = 0
+
+# Swap Logo
+[[patches]]
+[patches.pattern]
+target = "game.lua"
+pattern = '''
+G.SPLASH_LOGO = Sprite(0, 0, 
+        13*SC_scale, 
+        13*SC_scale*(G.ASSET_ATLAS["balatro"].py/G.ASSET_ATLAS["balatro"].px),
+        G.ASSET_ATLAS["balatro"], {x=0,y=0})
+'''
+position = "at"
+payload = '''
+G.SPLASH_LOGO = Sprite(0, 0, 
+        13*SC_scale, 
+        13*SC_scale*(G.ASSET_ATLAS["antsy_multiplayer_logo"].py/G.ASSET_ATLAS["antsy_multiplayer_logo"].px),
+        G.ASSET_ATLAS["antsy_multiplayer_logo"], {x=0,y=0})
+'''
+match_indent = true
