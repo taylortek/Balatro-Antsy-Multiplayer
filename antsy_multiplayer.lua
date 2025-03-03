@@ -1,5 +1,5 @@
 G.MULTIPLAYER = {}
-G.MULTIPLAYER.MOD = SMODS.find_mod('antsy_multiplayer')[1]
+G.MULTIPLAYER.MOD_PATH = SMODS.current_mod.path
 G.MULTIPLAYER.rounds_to_win = 3
 
 G.MULTIPLAYER.CONFIG = SMODS.current_mod.config
@@ -18,11 +18,10 @@ G.MULTIPLAYER.PLAYER = {
 }
 G.MULTIPLAYER.registered = false
 
-local mod_path = "" .. SMODS.current_mod.path
 local socket = require "socket"
 G.MULTIPLAYER.tcp = assert(socket.tcp())
 
--- New Antsy Logo
+-- New Balatro Logo
 SMODS.Atlas {
     key = "logo",
     path = "balatro.png",
