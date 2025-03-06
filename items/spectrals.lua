@@ -1,6 +1,8 @@
 SMODS.Consumable {
     key = "spam_mail",
     set = "Spectral",
+    atlas = "antsymulttarotatlas",
+    pos = {x=0,y=0},
     loc_txt = {name = "Possession", text = {"Sends a random one of", "your jokers to opponent", "and apply eternal to it"}},
     cost = 4,
     use = function(self, card, area, copier)
@@ -20,6 +22,8 @@ SMODS.Consumable {
 SMODS.Consumable {
     key = "jumpscare",
     set = "Spectral",
+    atlas = "antsymulttarotatlas",
+    pos = {x=1,y=0},
     loc_txt = {name = "Jumpscare", text = {"Up opponent's ante by one", "and destroy a random joker"}},
     cost = 4,
     use = function(self, card, area, copier)

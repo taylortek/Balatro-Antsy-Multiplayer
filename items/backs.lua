@@ -1,9 +1,9 @@
 SMODS.Back{
-    name = "Test Deck",
-    key = "test",
+    name = "Multiplayer Test Deck",
+    key = "multiplayer_test",
     pos = {x = 1, y = 3},
     loc_txt = {
-        name ="Test Deck",
+        name ="Multiplayer Test Deck",
         text={
             "Test deck"
         },

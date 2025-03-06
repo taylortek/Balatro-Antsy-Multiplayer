@@ -29,6 +29,13 @@ SMODS.Atlas {
     py = 216
 }
 
+SMODS.Atlas {
+    key = 'antsymulttarotatlas',
+    path = 'tarotsatlas.png',
+    px = 71,
+    py = 95
+}
+
 SMODS.load_file("core/hooks.lua")()
 SMODS.load_file("core/api.lua")()
 SMODS.load_file("core/ui.lua")()
