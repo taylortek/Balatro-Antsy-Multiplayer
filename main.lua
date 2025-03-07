@@ -13,7 +13,7 @@ SMODS.Tag:take_ownership('boss',
             return false
         end
     }
-)
+,true)
 
 -- Main server communication
 G.MULTIPLAYER.HOOKS.game_update = function (r)
