@@ -15,6 +15,22 @@ SMODS.Tag:take_ownership('boss',
     }
 ,true)
 
+SMODS.Voucher:take_ownership('directors_cut',
+    {
+        in_pool = function()
+            return false
+        end
+    }
+,true)
+
+SMODS.Joker:take_ownership('luchador',
+    {
+        in_pool = function()
+            return false
+        end
+    }
+,true)
+
 -- Main server communication
 G.MULTIPLAYER.HOOKS.game_update = function (r)
     if G.MULTIPLAYER.registered then
