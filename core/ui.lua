@@ -144,28 +144,3 @@ function disconnected_from_server_popup()
     }}
     return t
 end
-
--- Make config to allow for ip and port selection
-SMODS.current_mod.config_tab = function()
-	return {n = G.UIT.ROOT, config = {r = 0.1, minw = 5, align = "cm", padding = 0.2, colour = G.C.BLACK
-	}, nodes = {
-         {n = G.UIT.R, config = { align = "cm", padding = 0.01 }, nodes = {
-             create_text_input({
-                w = 4, max_length = 100, prompt_text = "ip",
-                extended_corpus = true, ref_table = G.MULTIPLAYER.CONFIG, ref_value = 'ip', keyboard_offset = 1,
-                callback = function(e)
-                    SMODS.save_mod_config(G.MULTIPLAYER.CONFIG)
-                    G.MULTIPLAYER.IP, G.MULTIPLAYER.PORT = G.MULTIPLAYER.CONFIG.ip:gsub("O", "0"), G.MULTIPLAYER.CONFIG.port:gsub("O", "0")
-                end
-            }),
-             create_text_input({
-                w = 4, max_length = 100, prompt_text = "port",
-                extended_corpus = true, ref_table = G.MULTIPLAYER.CONFIG, ref_value = 'port', keyboard_offset = 1,
-                callback = function(e)
-                    SMODS.save_mod_config(G.MULTIPLAYER.CONFIG) 
-                    G.MULTIPLAYER.IP, G.MULTIPLAYER.PORT = G.MULTIPLAYER.CONFIG.ip:gsub("O", "0"), G.MULTIPLAYER.CONFIG.port:gsub("O", "0")
-                end
-            }),
-        }}, 
-	}}
-end

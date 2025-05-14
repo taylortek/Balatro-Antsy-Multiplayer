@@ -14,9 +14,16 @@ G.SPLASH_LOGO = Sprite(0, 0,
 '''
 position = "at"
 payload = '''
+if G.MULTIPLAYER.CONFIG.enable_multiplayer then
 G.SPLASH_LOGO = Sprite(0, 0, 
         13*SC_scale, 
         13*SC_scale*(G.ASSET_ATLAS["antsy_multiplayer_logo"].py/G.ASSET_ATLAS["antsy_multiplayer_logo"].px),
         G.ASSET_ATLAS["antsy_multiplayer_logo"], {x=0,y=0})
+else
+G.SPLASH_LOGO = Sprite(0, 0, 
+        13*SC_scale, 
+        13*SC_scale*(G.ASSET_ATLAS["balatro"].py/G.ASSET_ATLAS["balatro"].px),
+        G.ASSET_ATLAS["balatro"], {x=0,y=0})
+end
 '''
 match_indent = true
