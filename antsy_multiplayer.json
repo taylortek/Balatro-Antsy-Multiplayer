@@ -1,7 +1,7 @@
 {
 	"id": "antsy_multiplayer",
-	"name": "Antsy Multiplayer",
-	"display_name": "Antsy",
+	"name": "Antsy Multiplayer (Mobile Edition)",
+	"display_name": "Antsy Multiplayer",
 	"author": ["Taylor Kerrihard"],
 	"description": "Adds multiplayer!",
 	"prefix": "antsy_multiplayer",
