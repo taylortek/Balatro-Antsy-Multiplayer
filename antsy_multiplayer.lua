@@ -92,5 +92,8 @@ SMODS.current_mod.config_tab = function()
             {n=G.UIT.R, config={align = "cm", padding = 0}, nodes={
                 {n=G.UIT.T, config={text = "*requires restart", scale = 0.2, colour = G.C.UI.TEXT_LIGHT}}
             }},
+            {n=G.UIT.R, config={align = "cm", padding = 0}, nodes={
+                {n=G.UIT.T, config={text = "Due to mobile restrictions. You are required to paste the ip and port.", scale = 0.2, colour = G.C.UI.TEXT_LIGHT}}
+            }},
 	}}
 end
